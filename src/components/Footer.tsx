@@ -10,10 +10,10 @@ export const Footer = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             {/* Brand */}
             <div className="space-y-4">
-              <h3 className="text-2xl font-bold gradient-text">João Silva</h3>
-              <p className="text-muted-foreground">
-                Desenvolvedor Full Stack apaixonado por criar experiências digitais 
-                que fazem a diferença.
+              <h3 className="text-xl font-light gradient-text tracking-wide">Ricardo Monteiro</h3>
+              <p className="text-muted-foreground font-light text-sm">
+                Consultoria estratégica e gestão patrimonial para 
+                famílias e empresas de alto patrimônio.
               </p>
             </div>
 
@@ -22,8 +22,8 @@ export const Footer = () => {
               <h4 className="font-semibold text-foreground">Links Rápidos</h4>
               <div className="space-y-2">
                 {[
-                  { label: "Sobre", id: "about" },
-                  { label: "Portfólio", id: "portfolio" },
+                  { label: "Expertise", id: "about" },
+                  { label: "Resultados", id: "portfolio" },
                   { label: "Contato", id: "contact" }
                 ].map((link) => (
                   <button
@@ -40,9 +40,9 @@ export const Footer = () => {
             {/* Contact Info */}
             <div className="space-y-4">
               <h4 className="font-semibold text-foreground">Contato</h4>
-              <div className="space-y-2 text-muted-foreground">
-                <p>joao@exemplo.com</p>
-                <p>+55 (11) 99999-9999</p>
+              <div className="space-y-2 text-muted-foreground text-sm font-light">
+                <p>contato@ricardomonteiro.com</p>
+                <p>+55 (11) 3000-0000</p>
                 <p>São Paulo, Brasil</p>
               </div>
             </div>
@@ -81,8 +81,8 @@ export const Footer = () => {
               </a>
             </div>
 
-            <p className="text-muted-foreground text-sm">
-              © {currentYear} João Silva. Todos os direitos reservados.
+            <p className="text-muted-foreground text-sm font-light">
+              © {currentYear} Ricardo Monteiro. Todos os direitos reservados.
             </p>
           </div>
         </div>

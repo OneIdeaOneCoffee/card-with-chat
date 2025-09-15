@@ -5,50 +5,34 @@ import { ExternalLink, Github } from "lucide-react";
 export const Portfolio = () => {
   const projects = [
     {
-      title: "E-commerce Platform",
-      description: "Plataforma completa de e-commerce com React, Node.js e Stripe. Interface moderna com foco na experiência do usuário.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+      title: "Estruturação Familiar",
+      description: "Reorganização patrimonial para família empresarial com foco em otimização tributária e sucessão.",
+      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop",
+      technologies: ["Family Office", "Sucessão", "Planejamento"],
       demoUrl: "#",
       githubUrl: "#"
     },
     {
-      title: "Dashboard Analytics",
-      description: "Dashboard interativo para análise de dados com visualizações em tempo real e relatórios personalizados.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-      technologies: ["React", "D3.js", "Python", "PostgreSQL"],
+      title: "Diversificação Internacional",
+      description: "Expansão estratégica de portfólio para mercados globais com proteção cambial e compliance internacional.",
+      image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&h=400&fit=crop",
+      technologies: ["Private Banking", "Offshore", "Compliance"],
       demoUrl: "#",
       githubUrl: "#"
     },
     {
-      title: "Mobile App Design",
-      description: "Design system completo para aplicativo mobile de fitness, incluindo protótipos interativos e guia de estilo.",
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop",
-      technologies: ["Figma", "Principle", "React Native"],
+      title: "Otimização Tributária",
+      description: "Reestruturação fiscal para holding empresarial com redução significativa da carga tributária.",
+      image: "https://images.unsplash.com/photo-1554224154-26032fced8bd?w=600&h=400&fit=crop",
+      technologies: ["Tributário", "Holding", "Governança"],
       demoUrl: "#",
       githubUrl: "#"
     },
     {
-      title: "SaaS Platform",
-      description: "Plataforma SaaS para gestão de projetos com arquitetura microserviços e integração com múltiplas APIs.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-      technologies: ["Next.js", "TypeScript", "AWS", "Docker"],
-      demoUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      title: "AI Chat Interface",
-      description: "Interface conversacional inteligente com processamento de linguagem natural e respostas contextuais.",
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
-      technologies: ["React", "OpenAI", "WebSocket", "Python"],
-      demoUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      title: "Blockchain Wallet",
-      description: "Carteira digital segura para criptomoedas com interface intuitiva e recursos avançados de segurança.",
-      image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=600&h=400&fit=crop",
-      technologies: ["React", "Web3.js", "Solidity", "Node.js"],
+      title: "Gestão Conservadora",
+      description: "Preservação de capital com retorno consistente através de estratégias de baixo risco.",
+      image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=600&h=400&fit=crop",
+      technologies: ["Renda Fixa", "Diversificação", "Proteção"],
       demoUrl: "#",
       githubUrl: "#"
     }
@@ -59,12 +43,12 @@ export const Portfolio = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="gradient-text">Portfólio</span>
+            <h2 className="text-3xl md:text-4xl font-light mb-8 tracking-wide">
+              <span className="gradient-text">Resultados</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Uma seleção dos meus projetos mais recentes, demonstrando expertise 
-              em desenvolvimento full-stack e design de experiências digitais.
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
+              Casos selecionados que demonstram nossa capacidade de gerar 
+              valor sustentável para nossos clientes.
             </p>
           </div>
 

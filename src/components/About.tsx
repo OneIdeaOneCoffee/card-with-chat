@@ -4,24 +4,24 @@ import { Code, Palette, Rocket, Users } from "lucide-react";
 export const About = () => {
   const skills = [
     {
-      icon: <Code className="w-8 h-8 text-primary" />,
-      title: "Desenvolvimento",
-      description: "React, Next.js, Node.js, TypeScript, Python"
+      icon: <Code className="w-6 h-6 text-primary" />,
+      title: "Planejamento",
+      description: "Estratégias patrimoniais personalizadas"
     },
     {
-      icon: <Palette className="w-8 h-8 text-primary" />,
-      title: "Design",
-      description: "UI/UX Design, Figma, Adobe Creative Suite"
+      icon: <Palette className="w-6 h-6 text-primary" />,
+      title: "Estruturação",
+      description: "Soluções financeiras sofisticadas"
     },
     {
-      icon: <Rocket className="w-8 h-8 text-primary" />,
-      title: "DevOps",
-      description: "AWS, Docker, CI/CD, Terraform, Kubernetes"
+      icon: <Rocket className="w-6 h-6 text-primary" />,
+      title: "Gestão",
+      description: "Administração ativa de portfólios"
     },
     {
-      icon: <Users className="w-8 h-8 text-primary" />,
-      title: "Metodologias",
-      description: "Agile, Scrum, Design Thinking, Clean Code"
+      icon: <Users className="w-6 h-6 text-primary" />,
+      title: "Relacionamento",
+      description: "Atendimento exclusivo e confidencial"
     }
   ];
 
@@ -30,34 +30,34 @@ export const About = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="gradient-text">Sobre Mim</span>
+            <h2 className="text-3xl md:text-4xl font-light mb-8 tracking-wide">
+              <span className="gradient-text">Expertise</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Desenvolvedor apaixonado por tecnologia com mais de 5 anos de experiência 
-              criando soluções digitais inovadoras e centradas no usuário.
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
+              Especialização consolidada em gestão patrimonial e consultoria estratégica, 
+              com histórico comprovado de resultados excepcionais.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div className="space-y-6">
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Minha jornada na tecnologia começou com a curiosidade de entender como as 
-                coisas funcionam. Hoje, combino expertise técnica com sensibilidade de design 
-                para criar experiências digitais que realmente fazem a diferença.
+              <p className="text-base text-muted-foreground leading-relaxed font-light">
+                Construí uma trajetória sólida fundamentada em relacionamentos duradouros 
+                e resultados consistentes. Nossa abordagem privilegia a discrição e a 
+                personalização de cada estratégia.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Especializo-me em desenvolvimento full-stack moderno, com foco em React, 
-                Node.js e arquiteturas escaláveis. Acredito que o melhor código é aquele 
-                que resolve problemas reais de forma elegante e eficiente.
+              <p className="text-base text-muted-foreground leading-relaxed font-light">
+                Atendemos exclusivamente famílias e empresas que valorizam tradição, 
+                confidencialidade e excelência na gestão de seus ativos. Cada cliente 
+                recebe atenção dedicada e soluções sob medida.
               </p>
               <div className="flex flex-wrap gap-3">
-                {["React", "TypeScript", "Node.js", "Python", "AWS", "Figma"].map((tech) => (
+                {["Gestão Patrimonial", "Private Banking", "Family Office", "Sucessão", "Investimentos", "Planejamento"].map((expertise) => (
                   <span 
-                    key={tech}
-                    className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium"
+                    key={expertise}
+                    className="px-4 py-2 bg-primary/8 text-primary rounded-full text-sm font-light"
                   >
-                    {tech}
+                    {expertise}
                   </span>
                 ))}
               </div>

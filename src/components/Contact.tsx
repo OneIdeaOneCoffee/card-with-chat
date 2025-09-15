@@ -55,12 +55,12 @@ export const Contact = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="gradient-text">Entre em Contato</span>
+            <h2 className="text-3xl md:text-4xl font-light mb-8 tracking-wide">
+              <span className="gradient-text">Contato Reservado</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Vamos conversar sobre seu próximo projeto. Estou sempre aberto a 
-              novas oportunidades e colaborações interessantes.
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
+              Conversas confidenciais para discussão de oportunidades 
+              exclusivas e estratégias personalizadas.
             </p>
           </div>
 
@@ -73,8 +73,8 @@ export const Contact = () => {
                     <Mail className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground">Email</h3>
-                    <p className="text-muted-foreground">joao@exemplo.com</p>
+                    <h3 className="font-light text-foreground">Email</h3>
+                    <p className="text-muted-foreground text-sm">contato@ricardomonteiro.com</p>
                   </div>
                 </div>
 
@@ -83,8 +83,8 @@ export const Contact = () => {
                     <Phone className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground">Telefone</h3>
-                    <p className="text-muted-foreground">+55 (11) 99999-9999</p>
+                    <h3 className="font-light text-foreground">Telefone</h3>
+                    <p className="text-muted-foreground text-sm">+55 (11) 3000-0000</p>
                   </div>
                 </div>
 
@@ -93,8 +93,8 @@ export const Contact = () => {
                     <MapPin className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground">Localização</h3>
-                    <p className="text-muted-foreground">São Paulo, Brasil</p>
+                    <h3 className="font-light text-foreground">Localização</h3>
+                    <p className="text-muted-foreground text-sm">São Paulo, Brasil</p>
                   </div>
                 </div>
               </div>
