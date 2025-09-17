@@ -24,11 +24,12 @@ export const Hero = () => {
           </h1>
           
           <h2 className="text-xl md:text-2xl text-muted-foreground mb-8 font-light tracking-wide">
-            Consultoria Jurídica
+            Consultoria Jurídica Corporativa
           </h2>
           
           <p className="text-base md:text-lg text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed font-light">
-            Assessoria jurídica de excelência para clientes institucionais.
+            Assessoria jurídica de excelência para clientes institucionais,
+            com foco em operações corporativas complexas.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
