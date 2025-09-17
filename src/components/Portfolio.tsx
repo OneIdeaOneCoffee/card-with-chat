@@ -5,34 +5,34 @@ import { ExternalLink, Github } from "lucide-react";
 export const Portfolio = () => {
   const projects = [
     {
-      title: "Estruturação Familiar",
-      description: "Reorganização patrimonial para família empresarial com foco em otimização tributária e sucessão.",
+      title: "Aquisição Corporativa",
+      description: "Assessoria jurídica em operação de M&A envolvendo empresa multinacional e target nacional de grande porte.",
       image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop",
-      technologies: ["Family Office", "Sucessão", "Planejamento"],
+      technologies: ["M&A", "Due Diligence", "Contratos"],
       demoUrl: "#",
       githubUrl: "#"
     },
     {
-      title: "Diversificação Internacional",
-      description: "Expansão estratégica de portfólio para mercados globais com proteção cambial e compliance internacional.",
+      title: "Reestruturação Societária",
+      description: "Reorganização complexa de grupo empresarial com múltiplas jurisdições e otimização de estrutura corporativa.",
       image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&h=400&fit=crop",
-      technologies: ["Private Banking", "Offshore", "Compliance"],
+      technologies: ["Societário", "Reestruturação", "Governança"],
       demoUrl: "#",
       githubUrl: "#"
     },
     {
-      title: "Otimização Tributária",
-      description: "Reestruturação fiscal para holding empresarial com redução significativa da carga tributária.",
+      title: "Compliance Regulatório",
+      description: "Implementação de programa de compliance abrangente para instituição financeira de grande porte.",
       image: "https://images.unsplash.com/photo-1554224154-26032fced8bd?w=600&h=400&fit=crop",
-      technologies: ["Tributário", "Holding", "Governança"],
+      technologies: ["Compliance", "Regulatório", "Financeiro"],
       demoUrl: "#",
       githubUrl: "#"
     },
     {
-      title: "Gestão Conservadora",
-      description: "Preservação de capital com retorno consistente através de estratégias de baixo risco.",
+      title: "Joint Venture Internacional",
+      description: "Estruturação de joint venture complexa entre grupos brasileiros e estrangeiros no setor de tecnologia.",
       image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=600&h=400&fit=crop",
-      technologies: ["Renda Fixa", "Diversificação", "Proteção"],
+      technologies: ["Joint Venture", "Internacional", "Tecnologia"],
       demoUrl: "#",
       githubUrl: "#"
     }
@@ -47,8 +47,8 @@ export const Portfolio = () => {
               <span className="gradient-text">Resultados</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
-              Casos selecionados que demonstram nossa capacidade de gerar 
-              valor sustentável para nossos clientes.
+              Casos selecionados que demonstram nossa excelência técnica e 
+              capacidade de execução em operações complexas.
             </p>
           </div>
 

@@ -20,16 +20,16 @@ export const Hero = () => {
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="max-w-4xl mx-auto animate-fade-in-up">
           <h1 className="text-5xl md:text-7xl font-light mb-8 tracking-wide">
-            <span className="gradient-text">Ricardo Monteiro</span>
+            <span className="gradient-text">Monteiro & Associados</span>
           </h1>
           
           <h2 className="text-xl md:text-2xl text-muted-foreground mb-8 font-light tracking-wide">
-            Consultoria Estratégica & Gestão Patrimonial
+            Consultoria Jurídica Corporativa
           </h2>
           
           <p className="text-base md:text-lg text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed font-light">
-            Duas décadas de excelência na estruturação de soluções financeiras 
-            para famílias e empresas de alto patrimônio.
+            Assessoria jurídica de excelência para clientes institucionais,
+            com foco em operações corporativas complexas e alta sofisticação.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">

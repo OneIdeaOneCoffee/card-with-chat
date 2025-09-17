@@ -5,23 +5,23 @@ export const About = () => {
   const skills = [
     {
       icon: <Code className="w-6 h-6 text-primary" />,
-      title: "Planejamento",
-      description: "Estratégias patrimoniais personalizadas"
+      title: "M&A",
+      description: "Fusões e aquisições corporativas"
     },
     {
       icon: <Palette className="w-6 h-6 text-primary" />,
-      title: "Estruturação",
-      description: "Soluções financeiras sofisticadas"
+      title: "Reestruturação",
+      description: "Reorganizações societárias complexas"
     },
     {
       icon: <Rocket className="w-6 h-6 text-primary" />,
-      title: "Gestão",
-      description: "Administração ativa de portfólios"
+      title: "Compliance",
+      description: "Conformidade regulatória corporativa"
     },
     {
       icon: <Users className="w-6 h-6 text-primary" />,
-      title: "Relacionamento",
-      description: "Atendimento exclusivo e confidencial"
+      title: "Governança",
+      description: "Governança corporativa estratégica"
     }
   ];
 
@@ -34,25 +34,25 @@ export const About = () => {
               <span className="gradient-text">Expertise</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
-              Especialização consolidada em gestão patrimonial e consultoria estratégica, 
-              com histórico comprovado de resultados excepcionais.
+              Especialização consolidada em direito corporativo e transações complexas, 
+              com histórico comprovado de sucesso em operações institucionais.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div className="space-y-6">
               <p className="text-base text-muted-foreground leading-relaxed font-light">
-                Construí uma trajetória sólida fundamentada em relacionamentos duradouros 
-                e resultados consistentes. Nossa abordagem privilegia a discrição e a 
-                personalização de cada estratégia.
+                Construímos uma trajetória sólida fundamentada em relacionamentos duradouros 
+                e execução impecável. Nossa abordagem privilegia a discrição e a 
+                customização de cada solução jurídica.
               </p>
               <p className="text-base text-muted-foreground leading-relaxed font-light">
-                Atendemos exclusivamente famílias e empresas que valorizam tradição, 
-                confidencialidade e excelência na gestão de seus ativos. Cada cliente 
-                recebe atenção dedicada e soluções sob medida.
+                Atendemos exclusivamente clientes institucionais que valorizam excelência, 
+                confidencialidade e precisão técnica. Cada mandato recebe atenção 
+                dedicada e estratégias jurídicas sob medida.
               </p>
               <div className="flex flex-wrap gap-3">
-                {["Gestão Patrimonial", "Private Banking", "Family Office", "Sucessão", "Investimentos", "Planejamento"].map((expertise) => (
+                {["Fusões & Aquisições", "Direito Societário", "Contratos Complexos", "Reestruturação", "Compliance", "Governança"].map((expertise) => (
                   <span 
                     key={expertise}
                     className="px-4 py-2 bg-primary/8 text-primary rounded-full text-sm font-light"

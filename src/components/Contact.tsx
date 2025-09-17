@@ -56,11 +56,11 @@ export const Contact = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-light mb-8 tracking-wide">
-              <span className="gradient-text">Contato Reservado</span>
+              <span className="gradient-text">Contato Executivo</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
-              Conversas confidenciais para discussão de oportunidades 
-              exclusivas e estratégias personalizadas.
+              Conversas confidenciais para discussão de mandatos corporativos 
+              e soluções jurídicas customizadas.
             </p>
           </div>
 
@@ -74,7 +74,7 @@ export const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-light text-foreground">Email</h3>
-                    <p className="text-muted-foreground text-sm">contato@ricardomonteiro.com</p>
+                    <p className="text-muted-foreground text-sm">contato@monteirosoc.com.br</p>
                   </div>
                 </div>
 
