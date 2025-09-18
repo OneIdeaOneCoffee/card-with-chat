@@ -6,22 +6,22 @@ export const About = () => {
     {
       icon: <Code className="w-6 h-6 text-primary" />,
       title: "M&A",
-      description: "Fusões e aquisições corporativas"
+      description: "Instituições"
     },
     {
       icon: <Palette className="w-6 h-6 text-primary" />,
       title: "Reestruturação",
-      description: "Reorganizações societárias complexas"
+      description: "Reorganizações societárias"
     },
     {
       icon: <Rocket className="w-6 h-6 text-primary" />,
       title: "Compliance",
-      description: "Conformidade regulatória corporativa"
+      description: "Conformidade regulatória"
     },
     {
       icon: <Users className="w-6 h-6 text-primary" />,
       title: "Governança",
-      description: "Governança corporativa estratégica"
+      description: "Governança estratégica"
     }
   ];
 
@@ -34,20 +34,18 @@ export const About = () => {
               <span className="gradient-text">Expertise</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
-              Especialização consolidada em direito corporativo e transações complexas, 
-              com histórico comprovado de sucesso em operações institucionais.
+              Direito institucional e transações complexas.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div className="space-y-6">
               <p className="text-base text-muted-foreground leading-relaxed font-light">
-                Construímos uma trajetória sólida fundamentada em relacionamentos duradouros 
-                e execução impecável. Nossa abordagem privilegia a discrição e a 
+                Nossa abordagem privilegia a discrição e a 
                 customização de cada solução jurídica.
               </p>
               <p className="text-base text-muted-foreground leading-relaxed font-light">
-                Atendemos exclusivamente clientes institucionais que valorizam excelência, 
+                Atendemos clientes institucionais que valorizam excelência, 
                 confidencialidade e precisão técnica. Cada mandato recebe atenção 
                 dedicada e estratégias jurídicas sob medida.
               </p>
