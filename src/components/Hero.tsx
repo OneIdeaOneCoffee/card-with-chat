@@ -36,9 +36,9 @@ export const Hero = () => {
             <Button 
               size="lg" 
               className="bg-primary hover:bg-primary/90 shadow-elegant transition-smooth"
-              onClick={() => scrollToSection('contact')}
+              onClick={() => scrollToSection('portfolio')}
             >
-              Ver Serviços
+              Ver Portfólio
             </Button>
             <Button 
               variant="outline" 
@@ -79,7 +79,7 @@ export const Hero = () => {
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <ArrowDown 
             className="w-6 h-6 text-primary cursor-pointer" 
-            onClick={() => scrollToSection('contact')}
+            onClick={() => scrollToSection('about')}
           />
         </div>
       </div>
