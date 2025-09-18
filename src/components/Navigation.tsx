@@ -22,6 +22,8 @@ export const Navigation = () => {
 
   const navItems = [
     { label: "Início", id: "hero" },
+    { label: "Sobre", id: "about" },
+    { label: "Portfólio", id: "portfolio" },
     { label: "Contato", id: "contact" }
   ];
 
