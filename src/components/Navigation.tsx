@@ -22,6 +22,8 @@ export const Navigation = () => {
 
   const navItems = [
     { label: "Início", id: "hero" },
+    { label: "Sobre", id: "about" },
+    { label: "Portfólio", id: "portfolio" },
     { label: "Contato", id: "contact" }
   ];
 
@@ -40,7 +42,7 @@ export const Navigation = () => {
             onClick={() => scrollToSection('hero')}
             className="text-2xl font-bold gradient-text hover:scale-105 transition-smooth"
           >
-            ES
+            JS
           </button>
 
           {/* Desktop Navigation */}
