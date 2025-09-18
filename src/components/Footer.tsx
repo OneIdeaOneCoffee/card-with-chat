@@ -10,38 +10,18 @@ export const Footer = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             {/* Brand */}
             <div className="space-y-4">
-              <h3 className="text-xl font-light gradient-text tracking-wide">Ricardo Monteiro</h3>
+              <h3 className="text-xl font-light gradient-text tracking-wide">Eduardo Sampaio</h3>
               <p className="text-muted-foreground font-light text-sm">
-                Consultoria estratégica e gestão patrimonial para 
-                famílias e empresas de alto patrimônio.
+                Consultoria Jurídica
               </p>
             </div>
 
-            {/* Quick Links */}
-            <div className="space-y-4">
-              <h4 className="font-semibold text-foreground">Links Rápidos</h4>
-              <div className="space-y-2">
-                {[
-                  { label: "Expertise", id: "about" },
-                  { label: "Resultados", id: "portfolio" },
-                  { label: "Contato", id: "contact" }
-                ].map((link) => (
-                  <button
-                    key={link.id}
-                    onClick={() => document.getElementById(link.id)?.scrollIntoView({ behavior: 'smooth' })}
-                    className="block text-muted-foreground hover:text-primary transition-smooth"
-                  >
-                    {link.label}
-                  </button>
-                ))}
-              </div>
-            </div>
 
             {/* Contact Info */}
             <div className="space-y-4">
               <h4 className="font-semibold text-foreground">Contato</h4>
               <div className="space-y-2 text-muted-foreground text-sm font-light">
-                <p>contato@ricardomonteiro.com</p>
+                <p>contato@eduardosampaio.com.br</p>
                 <p>+55 (11) 3000-0000</p>
                 <p>São Paulo, Brasil</p>
               </div>
@@ -82,7 +62,7 @@ export const Footer = () => {
             </div>
 
             <p className="text-muted-foreground text-sm font-light">
-              © {currentYear} Ricardo Monteiro. Todos os direitos reservados.
+              © {currentYear} Eduardo Sampaio. Todos os direitos reservados.
             </p>
           </div>
         </div>
