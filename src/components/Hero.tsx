@@ -36,7 +36,7 @@ export const Hero = () => {
             <Button 
               size="lg" 
               className="bg-primary hover:bg-primary/90 shadow-elegant transition-smooth"
-              onClick={() => scrollToSection('contact')}
+              onClick={() => scrollToSection('serviços')}
             >
               Ver Serviços
             </Button>
