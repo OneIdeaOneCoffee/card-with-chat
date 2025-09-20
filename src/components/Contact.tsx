@@ -174,8 +174,7 @@ export const Contact = () => {
                   </form>
 
                   <p className="text-xs text-muted-foreground text-center">
-                    💡 Para funcionalidade completa do chat, conecte ao 
-                    <a href="#" className="text-primary hover:underline ml-1">Supabase</a>
+                    💡 Para atendimento completo, este chat deve estar integrado ao sistema interno de mensagens.
                   </p>
                 </div>
               </CardContent>
