@@ -22,7 +22,7 @@ export const Navigation = () => {
 
   const navItems = [
     { label: "Início", id: "hero" },
-    { label: "Sobre", id: "about" },
+    { label: "Serviços", id: "about" },
     { label: "Contato", id: "contact" }
   ];
 
