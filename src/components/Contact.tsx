@@ -59,8 +59,7 @@ export const Contact = () => {
               <span className="gradient-text">Contato</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
-              Conversas confidenciais para discussão de mandatos corporativos 
-              e soluções jurídicas customizadas.
+              Conversas confidenciais para discussão de mandatos e soluções jurídicas customizadas.
             </p>
           </div>
 
@@ -74,7 +73,7 @@ export const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-light text-foreground">Email</h3>
-                    <p className="text-muted-foreground text-sm">contato@monteirosoc.com.br</p>
+                    <p className="text-muted-foreground text-sm">contato@sampaio.advs.br</p>
                   </div>
                 </div>
 
@@ -174,7 +173,7 @@ export const Contact = () => {
                   </form>
 
                   <p className="text-xs text-muted-foreground text-center">
-                    O atendimento completo ocorre por meio do sistema interno de mensagens institucional.
+                    O atendimento completo ocorre por meio do sistema interno de mensagens.
                   </p>
                 </div>
               </CardContent>
