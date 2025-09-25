@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Linkedin, Mail, Heart } from "lucide-react";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,8 +12,8 @@ export const Footer = () => {
             <div className="space-y-4">
               <h3 className="text-xl font-light gradient-text tracking-wide">Sampaio</h3>
               <p className="text-muted-foreground font-light text-sm">
-                Consultoria Jurídica Corporativa - Assessoria jurídica de excelência 
-                para operações corporativas complexas e clientes institucionais.
+                Consultoria e Assessoria jurídica de excelência 
+                para operações complexas.
               </p>
             </div>
 
@@ -22,6 +22,7 @@ export const Footer = () => {
               <h4 className="font-semibold text-foreground">Links Rápidos</h4>
               <div className="space-y-2">
                 {[
+                  { label: "Início", id: "hero" }
                   { label: "Serviços", id: "about" },
                   { label: "Contato", id: "contact" }
                 ].map((link) => (
@@ -40,7 +41,7 @@ export const Footer = () => {
             <div className="space-y-4">
               <h4 className="font-semibold text-foreground">Contato</h4>
               <div className="space-y-2 text-muted-foreground text-sm font-light">
-                <p>contato@sampaio.com.br</p>
+                <p>contato@sampaio.advs.br</p>
                 <p>+55 (11) 3000-0000</p>
                 <p>São Paulo, Brasil</p>
               </div>
@@ -50,9 +51,7 @@ export const Footer = () => {
           {/* Social Links & Copyright */}
           <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2 text-muted-foreground">
-              <span>Feito com</span>
-              <Heart className="w-4 h-4 text-red-500" />
-              <span>usando React & Lovable</span>
+              <span>Desenvolvido por equipe interna</span>
             </div>
 
             <div className="flex gap-4">
