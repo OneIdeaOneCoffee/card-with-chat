@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Linkedin, Mail } from "lucide-react";
 
 export const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -19,16 +19,16 @@ export const Hero = () => {
 
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="max-w-4xl mx-auto animate-fade-in-up">
-          <h1 className="text-5xl md:text-7xl font-light mb-8 tracking-wide">
+          <h2 className="text-5xl md:text-7xl font-light mb-8 tracking-wide">
             <span className="gradient-text">Sampaio & Associados</span>
-          </h1>
-          
-          <h2 className="text-xl md:text-2xl text-muted-foreground mb-8 font-light tracking-wide">
-            Consultoria Jurídica
           </h2>
           
+          <h3 className="text-xl md:text-2xl text-muted-foreground mb-8 font-light tracking-wide">
+            Consultoria Jurídica
+          </h3>
+          
           <p className="text-base md:text-lg text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed font-light">
-            Assessoria jurídica para empresas, instituições e organizações,
+            Assessoria jurídica para empresas, organizações e instituições,
             com foco em operações.
           </p>
 
@@ -60,7 +60,7 @@ export const Hero = () => {
               <Linkedin className="w-6 h-6 text-primary" />
             </a>
             <a 
-              href="mailto:contato@sampaio.com.br"
+              href="mailto:contato@sampaio.advs.br"
               className="p-3 rounded-full bg-card shadow-card hover:shadow-elegant transition-smooth hover:scale-110"
             >
               <Mail className="w-6 h-6 text-primary" />
