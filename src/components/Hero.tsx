@@ -20,25 +20,25 @@ export const Hero = () => {
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="max-w-4xl mx-auto animate-fade-in-up">
           <h1 className="text-5xl md:text-7xl font-light mb-8 tracking-wide">
-            <span className="gradient-text">Monteiro & Associados</span>
+            <span className="gradient-text">Sampaio & Associados</span>
           </h1>
           
           <h2 className="text-xl md:text-2xl text-muted-foreground mb-8 font-light tracking-wide">
-            Consultoria Jurídica Corporativa
+            Consultoria Jurídica
           </h2>
           
           <p className="text-base md:text-lg text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed font-light">
-            Assessoria jurídica de excelência para clientes institucionais,
-            com foco em operações corporativas complexas e alta sofisticação.
+            Assessoria jurídica para empresas, instituições e organizações,
+            com foco em operações.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button 
               size="lg" 
               className="bg-primary hover:bg-primary/90 shadow-elegant transition-smooth"
-              onClick={() => scrollToSection('portfolio')}
+              onClick={() => scrollToSection('about')}
             >
-              Ver Portfólio
+              Ver Serviços
             </Button>
             <Button 
               variant="outline" 
