@@ -5,8 +5,8 @@ export const About = () => {
   const skills = [
     {
       icon: <Code className="w-6 h-6 text-primary" />,
-      title: "M&A",
-      description: "Fusões e aquisições corporativas"
+      title: "Fusões e Aquisições (M&A)",
+      description: "Operações de fusões e aquisições corporativas"
     },
     {
       icon: <Palette className="w-6 h-6 text-primary" />,
@@ -31,11 +31,14 @@ export const About = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-light mb-8 tracking-wide">
-              <span className="gradient-text">Expertise</span>
+              <span className="gradient-text">Serviços</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
               Especialização consolidada em direito corporativo e transações complexas, 
               com histórico comprovado de sucesso em operações institucionais.
+            </p>
+            <p className="text-base text-muted-foreground max-w-2xl mx-auto mt-4 font-light">
+              Os serviços incluem assessoria completa em todas as áreas do direito corporativo:
             </p>
           </div>
 

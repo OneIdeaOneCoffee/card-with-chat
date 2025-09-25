@@ -52,14 +52,6 @@ export const Hero = () => {
 
           <div className="flex gap-6 justify-center">
             <a 
-              href="https://github.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="p-3 rounded-full bg-card shadow-card hover:shadow-elegant transition-smooth hover:scale-110"
-            >
-              <Github className="w-6 h-6 text-primary" />
-            </a>
-            <a 
               href="https://linkedin.com" 
               target="_blank" 
               rel="noopener noreferrer"
@@ -68,7 +60,7 @@ export const Hero = () => {
               <Linkedin className="w-6 h-6 text-primary" />
             </a>
             <a 
-              href="mailto:joao@exemplo.com"
+              href="mailto:contato@sampaio.com.br"
               className="p-3 rounded-full bg-card shadow-card hover:shadow-elegant transition-smooth hover:scale-110"
             >
               <Mail className="w-6 h-6 text-primary" />

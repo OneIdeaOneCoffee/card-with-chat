@@ -56,7 +56,7 @@ export const Contact = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-light mb-8 tracking-wide">
-              <span className="gradient-text">Contato Executivo</span>
+              <span className="gradient-text">Contato</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
               Conversas confidenciais para discussão de mandatos corporativos 
@@ -174,7 +174,7 @@ export const Contact = () => {
                   </form>
 
                   <p className="text-xs text-muted-foreground text-center">
-                    💡 Para atendimento completo, este chat deve estar integrado ao sistema interno de mensagens.
+                    O atendimento completo ocorre por meio do sistema interno de mensagens institucional.
                   </p>
                 </div>
               </CardContent>

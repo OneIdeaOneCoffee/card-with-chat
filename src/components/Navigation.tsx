@@ -42,7 +42,7 @@ export const Navigation = () => {
             onClick={() => scrollToSection('hero')}
             className="text-2xl font-bold gradient-text hover:scale-105 transition-smooth"
           >
-            JS
+            Sampaio
           </button>
 
           {/* Desktop Navigation */}
@@ -64,7 +64,7 @@ export const Navigation = () => {
               onClick={() => scrollToSection('contact')}
               className="bg-primary hover:bg-primary/90 shadow-elegant transition-smooth"
             >
-              Vamos Conversar
+              Fale Conosco
             </Button>
           </div>
 
@@ -90,12 +90,12 @@ export const Navigation = () => {
                   {item.label}
                 </button>
               ))}
-              <Button 
-                onClick={() => scrollToSection('contact')}
-                className="w-full bg-primary hover:bg-primary/90 transition-smooth mt-4"
-              >
-                Vamos Conversar
-              </Button>
+               <Button 
+                 onClick={() => scrollToSection('contact')}
+                 className="w-full bg-primary hover:bg-primary/90 transition-smooth mt-4"
+               >
+                 Fale Conosco
+               </Button>
             </div>
           </div>
         )}
