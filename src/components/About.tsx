@@ -48,7 +48,7 @@ export const About = () => {
                 dedicada e estratégias jurídicas sob medida.
               </p>
               <div className="flex flex-wrap gap-3">
-                {["Fusões & Aquisições", "Direito Societário", "Contratos Complexos", "Reestruturação", "Compliance", "Governança"].map((expertise) => (
+                {["Direito Societário", "Contratos Complexos", "Reestruturação", "Compliance"].map((expertise) => (
                   <span 
                     key={expertise}
                     className="px-4 py-2 bg-primary/8 text-primary rounded-full text-sm font-light"

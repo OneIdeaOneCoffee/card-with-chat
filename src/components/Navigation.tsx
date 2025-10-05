@@ -41,7 +41,7 @@ export const Navigation = () => {
             onClick={() => scrollToSection('hero')}
             className="text-2xl font-bold gradient-text hover:scale-105 transition-smooth"
           >
-            Início
+            Advocacia
           </button>
 
           {/* Desktop Navigation */}
