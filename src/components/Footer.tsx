@@ -12,8 +12,7 @@ export const Footer = () => {
             <div className="space-y-4">
               <h3 className="text-xl font-light gradient-text tracking-wide">Sampaio</h3>
               <p className="text-muted-foreground font-light text-sm">
-                Consultoria e Assessoria jurídica de excelência 
-                para operações complexas.
+                Consultoria e Assessoria jurídica.
               </p>
             </div>
 
@@ -41,7 +40,7 @@ export const Footer = () => {
             <div className="space-y-4">
               <h4 className="font-semibold text-foreground">Contato</h4>
               <div className="space-y-2 text-muted-foreground text-sm font-light">
-                <p>contato@sampaio.advs.br</p>
+                <p>contato@advogado.advs.br</p>
                 <p>+55 (11) 3000-0000</p>
                 <p>São Paulo, Brasil</p>
               </div>
@@ -51,7 +50,7 @@ export const Footer = () => {
           {/* Social Links & Copyright */}
           <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2 text-muted-foreground">
-              <span>Desenvolvido por equipe interna</span>
+              <span>Desenvolvido por procedimento interno</span>
             </div>
 
             <div className="flex gap-4">
@@ -64,7 +63,7 @@ export const Footer = () => {
                 <Linkedin className="w-5 h-5 text-muted-foreground hover:text-primary" />
               </a>
               <a 
-                href="mailto:contato@sampaio.com.br"
+                href="mailto:contato@advogado.advs.br"
                 className="p-2 rounded-full hover:bg-primary/10 transition-smooth"
               >
                 <Mail className="w-5 h-5 text-muted-foreground hover:text-primary" />
@@ -72,7 +71,7 @@ export const Footer = () => {
             </div>
 
             <p className="text-muted-foreground text-sm font-light">
-              © {currentYear} Sampaio Consultoria Jurídica. Todos os direitos reservados.
+              © {currentYear} Consultoria Jurídica. Todos os direitos reservados.
             </p>
           </div>
         </div>
