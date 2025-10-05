@@ -28,8 +28,7 @@ export const Hero = () => {
           </h3>
           
           <p className="text-base md:text-lg text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed font-light">
-            Assessoria jurídica para empresas, organizações e instituições,
-            com foco em operações.
+            Assessoria jurídica para empresas, organizações e instituições.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -60,7 +59,7 @@ export const Hero = () => {
               <Linkedin className="w-6 h-6 text-primary" />
             </a>
             <a 
-              href="mailto:contato@sampaio.advs.br"
+              href="mailto:contato@advogado.advs.br"
               className="p-3 rounded-full bg-card shadow-card hover:shadow-elegant transition-smooth hover:scale-110"
             >
               <Mail className="w-6 h-6 text-primary" />
