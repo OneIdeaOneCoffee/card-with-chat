@@ -123,10 +123,10 @@ export const Contact = () => {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <MessageCircle className="w-5 h-5 text-primary" />
-                  Fale agora (resposta no mesmo dia útil)
+                  Fale agora
                 </CardTitle>
                 <p className="text-sm text-muted-foreground">
-                  Conectado ao Telegram para resposta rápida
+                  Resposta no mesmo dia útil via neste chat
                 </p>
               </CardHeader>
               <CardContent>
