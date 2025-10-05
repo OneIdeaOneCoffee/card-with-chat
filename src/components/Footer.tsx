@@ -21,7 +21,7 @@ export const Footer = () => {
               <h4 className="font-semibold text-foreground">Links Rápidos</h4>
               <div className="space-y-2">
                 {[
-                  { label: "Início", id: "hero" }
+                  { label: "Início", id: "hero" },
                   { label: "Serviços", id: "about" },
                   { label: "Contato", id: "contact" }
                 ].map((link) => (
