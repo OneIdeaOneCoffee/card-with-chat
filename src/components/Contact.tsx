@@ -103,7 +103,7 @@ export const Contact = () => {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Mail className="w-5 h-5 text-primary" />
-                    Enviar Email
+                    Discutir seu caso confidencialmente
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -123,7 +123,7 @@ export const Contact = () => {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <MessageCircle className="w-5 h-5 text-primary" />
-                  Chat Direto
+                  Fale agora (resposta no mesmo dia útil)
                 </CardTitle>
                 <p className="text-sm text-muted-foreground">
                   Conectado ao Telegram para resposta rápida
