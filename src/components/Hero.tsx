@@ -20,7 +20,7 @@ export const Hero = () => {
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="max-w-4xl mx-auto animate-fade-in-up">
           <h2 className="text-5xl md:text-7xl font-light mb-8 tracking-wide">
-            <span className="gradient-text">Sampaio & Associados</span>
+            <span className="gradient-text">Advocacia</span>
           </h2>
           
           <h3 className="text-xl md:text-2xl text-muted-foreground mb-8 font-light tracking-wide">
@@ -46,7 +46,7 @@ export const Hero = () => {
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-smooth"
               onClick={() => scrollToSection('contact')}
             >
-              Entre em Contato
+              Agende consulta estratégica
             </Button>
           </div>
 
