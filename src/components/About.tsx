@@ -4,24 +4,19 @@ import { Code, Palette, Rocket, Users } from "lucide-react";
 export const About = () => {
   const skills = [
     {
-      icon: <Code className="w-6 h-6 text-primary" />,
-      title: "Fusões e Aquisições (M&A)",
-      description: "Operações institucionais"
-    },
-    {
       icon: <Palette className="w-6 h-6 text-primary" />,
-      title: "Reestruturação",
-      description: "Reorganizações societárias"
+      title: "Contratos empresariais",
+      description: "Reorganizações contratuais e societárias"
     },
     {
       icon: <Rocket className="w-6 h-6 text-primary" />,
-      title: "Compliance",
+      title: " Auditoria e LGPD",
       description: "Conformidade regulatória"
     },
     {
       icon: <Users className="w-6 h-6 text-primary" />,
-      title: "Governança",
-      description: "Governança estratégica"
+      title: "Planejamento de negócios",
+      description: "Atuação estratégica"
     }
   ];
 
@@ -34,8 +29,7 @@ export const About = () => {
               <span className="gradient-text">Serviços</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
-              Direito de empresas e transações complexas, 
-              em operações institucionais.
+              Direito de empresas e transações complexas.
             </p>
             <p className="text-base text-muted-foreground max-w-2xl mx-auto mt-4 font-light">
               Os serviços incluem assessoria em todas as áreas do direito de empresas.
