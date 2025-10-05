@@ -126,7 +126,7 @@ export const Contact = () => {
                   Fale agora
                 </CardTitle>
                 <p className="text-sm text-muted-foreground">
-                  Resposta no mesmo dia útil via neste chat
+                  Resposta no mesmo dia útil neste Telegram
                 </p>
               </CardHeader>
               <CardContent>
