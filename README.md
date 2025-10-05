@@ -1,6 +1,6 @@
 ## Project info
 
-**URL**: https://lovable.dev/projects/e2955fa1-588e-4757-84ac-60946fbe4b41
+**URL**: https://card-with-chat.lovable.app/
 
 **Use your preferred IDE**
 
