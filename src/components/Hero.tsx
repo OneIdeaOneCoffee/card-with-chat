@@ -19,7 +19,10 @@ export const Hero = () => {
 
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="max-w-4xl mx-auto animate-fade-in-up">
-          <h2 className="text-5xl md:text-7xl font-light mb-8 tracking-wide">
+          <h2 
+            className="text-5xl md:text-7xl font-light mb-8 tracking-wide cursor-pointer hover:scale-105 transition-smooth"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
             <span className="gradient-text">Advocacia</span>
           </h2>
           

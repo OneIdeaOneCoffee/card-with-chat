@@ -47,16 +47,6 @@ export const About = () => {
                 confidencialidade e precisão técnica. Cada mandato recebe atenção 
                 dedicada e estratégias jurídicas sob medida.
               </p>
-              <div className="flex flex-wrap gap-3">
-                {["Direito Societário", "Contratos Complexos", "Reestruturação", "Compliance"].map((expertise) => (
-                  <span 
-                    key={expertise}
-                    className="px-4 py-2 bg-primary/8 text-primary rounded-full text-sm font-light"
-                  >
-                    {expertise}
-                  </span>
-                ))}
-              </div>
             </div>
 
             <div className="grid grid-cols-2 gap-6">

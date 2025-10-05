@@ -27,7 +27,13 @@ export const Footer = () => {
                 ].map((link) => (
                   <button
                     key={link.id}
-                    onClick={() => document.getElementById(link.id)?.scrollIntoView({ behavior: 'smooth' })}
+                    onClick={() => {
+                      if (link.id === 'hero') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      } else {
+                        document.getElementById(link.id)?.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }}
                     className="block text-muted-foreground hover:text-primary transition-smooth"
                   >
                     {link.label}
