@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Send, MessageCircle, Mail, Phone, MapPin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 export const Contact = () => {
   const [chatMessage, setChatMessage] = useState("");
@@ -13,28 +14,51 @@ export const Contact = () => {
 
   const handleChatSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!chatMessage.trim()) return;
+    if (!chatMessage.trim()) {
+      toast({
+        title: "Erro",
+        description: "Por favor, digite uma mensagem.",
+        variant: "destructive"
+      });
+      return;
+    }
 
+    if (chatMessage.trim().length > 1000) {
+      toast({
+        title: "Erro",
+        description: "A mensagem não pode ter mais de 1000 caracteres.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    const userMessage = chatMessage.trim();
+    
     // Add user message to chat
-    const newMessages = [...chatMessages, { text: chatMessage, sender: 'user' as const }];
+    const newMessages = [...chatMessages, { text: userMessage, sender: 'user' as const }];
     setChatMessages(newMessages);
     setChatMessage("");
 
-    // Simulate sending to Telegram (requires backend integration)
     try {
-      // This would be the actual API call to your backend
-      // await fetch('/api/sendMessage', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({ text: chatMessage })
-      // });
+      console.log("Sending message to Telegram:", userMessage);
+      
+      const { data, error } = await supabase.functions.invoke('send-telegram-message', {
+        body: { text: userMessage }
+      });
+
+      if (error) {
+        console.error("Error sending to Telegram:", error);
+        throw error;
+      }
+
+      console.log("Message sent successfully:", data);
       
       toast({
         title: "Mensagem enviada!",
         description: "Sua mensagem foi enviada. Responderemos em breve.",
       });
 
-      // Simulate bot response (replace with actual Telegram integration)
+      // Add bot response
       setTimeout(() => {
         setChatMessages(prev => [...prev, { 
           text: "Obrigado pela sua mensagem! Entrarei em contato em breve.", 
@@ -42,9 +66,10 @@ export const Contact = () => {
         }]);
       }, 1000);
     } catch (error) {
+      console.error("Error in handleChatSubmit:", error);
       toast({
         title: "Erro ao enviar",
-        description: "Ocorreu um erro. Tente novamente.",
+        description: "Ocorreu um erro ao enviar a mensagem. Tente novamente.",
         variant: "destructive"
       });
     }
