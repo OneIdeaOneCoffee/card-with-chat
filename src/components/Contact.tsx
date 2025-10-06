@@ -5,7 +5,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Send, MessageCircle, Mail, Phone, MapPin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 
 export const Contact = () => {
   const [chatMessage, setChatMessage] = useState("");
@@ -42,15 +41,21 @@ export const Contact = () => {
     try {
       console.log("Sending message to Telegram:", userMessage);
       
-      const { data, error } = await supabase.functions.invoke('send-telegram-message', {
-        body: { text: userMessage }
+      const response = await fetch('https://nwjhgteqoohsniugodyn.supabase.co/functions/v1/send-telegram-message', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ text: userMessage })
       });
 
-      if (error) {
-        console.error("Error sending to Telegram:", error);
-        throw error;
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error("Error sending to Telegram:", errorData);
+        throw new Error(errorData.error || 'Failed to send message');
       }
 
+      const data = await response.json();
       console.log("Message sent successfully:", data);
       
       toast({
