@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Send, MessageCircle, Mail, Phone, MapPin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+import { createClient } from "@supabase/supabase-js";
 
 export const Contact = () => {
   const [chatMessage, setChatMessage] = useState("");
@@ -16,7 +16,20 @@ export const Contact = () => {
   // Load existing messages on mount
   useEffect(() => {
     const loadMessages = async () => {
-      const { data, error } = await supabase
+      // Create a Supabase client with session header
+      const supabaseWithSession = createClient(
+        'https://nwjhgteqoohsniugodyn.supabase.co',
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im53amhndGVxb29oc25pdWdvZHluIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgyMDM1MzksImV4cCI6MjA3Mzc3OTUzOX0._8EqEHSX6H-9-n5idx7VqsRtN2uWvwqDlbBEpW9ioTE',
+        {
+          global: {
+            headers: {
+              'x-session-id': sessionId
+            }
+          }
+        }
+      );
+
+      const { data, error } = await supabaseWithSession
         .from('chat_messages')
         .select('*')
         .eq('session_id', sessionId)
@@ -37,8 +50,20 @@ export const Contact = () => {
 
     loadMessages();
 
-    // Subscribe to new messages
-    const channel = supabase
+    // Subscribe to new messages with session header
+    const supabaseWithSession = createClient(
+      'https://nwjhgteqoohsniugodyn.supabase.co',
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im53amhndGVxb29oc25pdWdvZHluIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgyMDM1MzksImV4cCI6MjA3Mzc3OTUzOX0._8EqEHSX6H-9-n5idx7VqsRtN2uWvwqDlbBEpW9ioTE',
+      {
+        global: {
+          headers: {
+            'x-session-id': sessionId
+          }
+        }
+      }
+    );
+
+    const channel = supabaseWithSession
       .channel('chat-messages')
       .on(
         'postgres_changes',
@@ -59,7 +84,7 @@ export const Contact = () => {
       .subscribe();
 
     return () => {
-      supabase.removeChannel(channel);
+      supabaseWithSession.removeChannel(channel);
     };
   }, [sessionId]);
 
