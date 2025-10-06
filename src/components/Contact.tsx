@@ -1,15 +1,67 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Send, MessageCircle, Mail, Phone, MapPin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 export const Contact = () => {
   const [chatMessage, setChatMessage] = useState("");
   const [chatMessages, setChatMessages] = useState<Array<{text: string, sender: 'user' | 'bot'}>>([]);
+  const [sessionId] = useState(() => `session-${Date.now()}`);
   const { toast } = useToast();
+
+  // Load existing messages on mount
+  useEffect(() => {
+    const loadMessages = async () => {
+      const { data, error } = await supabase
+        .from('chat_messages')
+        .select('*')
+        .eq('session_id', sessionId)
+        .order('created_at', { ascending: true });
+
+      if (error) {
+        console.error('Error loading messages:', error);
+        return;
+      }
+
+      if (data) {
+        setChatMessages(data.map(msg => ({
+          text: msg.text,
+          sender: msg.sender as 'user' | 'bot'
+        })));
+      }
+    };
+
+    loadMessages();
+
+    // Subscribe to new messages
+    const channel = supabase
+      .channel('chat-messages')
+      .on(
+        'postgres_changes',
+        {
+          event: 'INSERT',
+          schema: 'public',
+          table: 'chat_messages',
+          filter: `session_id=eq.${sessionId}`
+        },
+        (payload) => {
+          console.log('New message received:', payload);
+          setChatMessages(prev => [...prev, {
+            text: payload.new.text,
+            sender: payload.new.sender as 'user' | 'bot'
+          }]);
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, [sessionId]);
 
   const handleChatSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,10 +84,6 @@ export const Contact = () => {
     }
 
     const userMessage = chatMessage.trim();
-    
-    // Add user message to chat
-    const newMessages = [...chatMessages, { text: userMessage, sender: 'user' as const }];
-    setChatMessages(newMessages);
     setChatMessage("");
 
     try {
@@ -46,7 +94,10 @@ export const Contact = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ text: userMessage })
+        body: JSON.stringify({ 
+          text: userMessage,
+          session_id: sessionId
+        })
       });
 
       if (!response.ok) {
@@ -57,19 +108,10 @@ export const Contact = () => {
 
       const data = await response.json();
       console.log("Message sent successfully:", data);
-      
       toast({
         title: "Mensagem enviada!",
         description: "Sua mensagem foi enviada. Responderemos em breve.",
       });
-
-      // Add bot response
-      setTimeout(() => {
-        setChatMessages(prev => [...prev, { 
-          text: "Obrigado pela sua mensagem! Entrarei em contato em breve.", 
-          sender: 'bot' 
-        }]);
-      }, 1000);
     } catch (error) {
       console.error("Error in handleChatSubmit:", error);
       toast({

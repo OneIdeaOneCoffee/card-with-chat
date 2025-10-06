@@ -1,4 +1,5 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.0";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -7,6 +8,7 @@ const corsHeaders = {
 
 interface TelegramMessage {
   text: string;
+  session_id: string;
 }
 
 serve(async (req) => {
@@ -16,7 +18,7 @@ serve(async (req) => {
   }
 
   try {
-    const { text } = await req.json() as TelegramMessage;
+    const { text, session_id } = await req.json() as TelegramMessage;
 
     if (!text || text.trim().length === 0) {
       console.error('Empty message received');
@@ -28,16 +30,33 @@ serve(async (req) => {
 
     const botToken = Deno.env.get('TELEGRAM_BOT_TOKEN');
     const chatId = Deno.env.get('TELEGRAM_CHAT_ID');
+    const supabaseUrl = Deno.env.get('SUPABASE_URL');
+    const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
 
-    if (!botToken || !chatId) {
-      console.error('Missing Telegram credentials');
+    if (!botToken || !chatId || !supabaseUrl || !supabaseServiceKey) {
+      console.error('Missing configuration');
       return new Response(
-        JSON.stringify({ error: 'Telegram not configured' }),
+        JSON.stringify({ error: 'Service not configured' }),
         { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
 
+    const supabase = createClient(supabaseUrl, supabaseServiceKey);
+
     console.log('Sending message to Telegram chat:', chatId);
+
+    // Store user message in database
+    const { error: dbError } = await supabase
+      .from('chat_messages')
+      .insert({
+        text,
+        sender: 'user',
+        session_id
+      });
+
+    if (dbError) {
+      console.error('Database error:', dbError);
+    }
 
     // Send message to Telegram
     const telegramApiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
