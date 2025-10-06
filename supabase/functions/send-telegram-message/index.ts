@@ -20,10 +20,37 @@ serve(async (req) => {
   try {
     const { text, session_id } = await req.json() as TelegramMessage;
 
+    // Validate inputs
     if (!text || text.trim().length === 0) {
       console.error('Empty message received');
       return new Response(
         JSON.stringify({ error: 'Message text is required' }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    if (!session_id || typeof session_id !== 'string' || session_id.trim().length === 0) {
+      console.error('Invalid session_id');
+      return new Response(
+        JSON.stringify({ error: 'Valid session_id is required' }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    // Validate session_id format to prevent injection
+    if (session_id.length > 100 || !/^[a-zA-Z0-9-_]+$/.test(session_id)) {
+      console.error('Invalid session_id format');
+      return new Response(
+        JSON.stringify({ error: 'Invalid session_id format' }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    // Validate text length
+    if (text.length > 1000) {
+      console.error('Message too long');
+      return new Response(
+        JSON.stringify({ error: 'Message must be less than 1000 characters' }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }

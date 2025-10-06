@@ -30,6 +30,15 @@ serve(async (req) => {
     const messageText = update.message.text;
     const chatId = update.message.chat.id.toString();
 
+    // Validate message text length
+    if (messageText.length > 1000) {
+      console.error("Message too long");
+      return new Response(JSON.stringify({ error: "Message too long" }), {
+        status: 400,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
     console.log(`Processing message from chat ${chatId}: ${messageText}`);
 
     // Insert message into database as bot message

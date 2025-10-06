@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Send, MessageCircle, Mail, Phone, MapPin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { createClient } from "@supabase/supabase-js";
+import { supabase } from "@/integrations/supabase/client";
 
 export const Contact = () => {
   const [chatMessage, setChatMessage] = useState("");
@@ -16,54 +16,36 @@ export const Contact = () => {
   // Load existing messages on mount
   useEffect(() => {
     const loadMessages = async () => {
-      // Create a Supabase client with session header
-      const supabaseWithSession = createClient(
-        'https://nwjhgteqoohsniugodyn.supabase.co',
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im53amhndGVxb29oc25pdWdvZHluIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgyMDM1MzksImV4cCI6MjA3Mzc3OTUzOX0._8EqEHSX6H-9-n5idx7VqsRtN2uWvwqDlbBEpW9ioTE',
-        {
-          global: {
-            headers: {
-              'x-session-id': sessionId
-            }
-          }
+      try {
+        const response = await fetch('https://nwjhgteqoohsniugodyn.supabase.co/functions/v1/get-chat-messages', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ session_id: sessionId })
+        });
+
+        if (!response.ok) {
+          console.error('Failed to load messages');
+          return;
         }
-      );
 
-      const { data, error } = await supabaseWithSession
-        .from('chat_messages')
-        .select('*')
-        .eq('session_id', sessionId)
-        .order('created_at', { ascending: true });
-
-      if (error) {
+        const data = await response.json();
+        if (data.messages) {
+          setChatMessages(data.messages.map((msg: any) => ({
+            text: msg.text,
+            sender: msg.sender as 'user' | 'bot'
+          })));
+        }
+      } catch (error) {
         console.error('Error loading messages:', error);
-        return;
-      }
-
-      if (data) {
-        setChatMessages(data.map(msg => ({
-          text: msg.text,
-          sender: msg.sender as 'user' | 'bot'
-        })));
       }
     };
 
     loadMessages();
 
-    // Subscribe to new messages with session header
-    const supabaseWithSession = createClient(
-      'https://nwjhgteqoohsniugodyn.supabase.co',
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im53amhndGVxb29oc25pdWdvZHluIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgyMDM1MzksImV4cCI6MjA3Mzc3OTUzOX0._8EqEHSX6H-9-n5idx7VqsRtN2uWvwqDlbBEpW9ioTE',
-      {
-        global: {
-          headers: {
-            'x-session-id': sessionId
-          }
-        }
-      }
-    );
-
-    const channel = supabaseWithSession
+    // Subscribe to new messages using realtime
+    const channel = supabase
       .channel('chat-messages')
       .on(
         'postgres_changes',
@@ -84,7 +66,7 @@ export const Contact = () => {
       .subscribe();
 
     return () => {
-      supabaseWithSession.removeChannel(channel);
+      supabase.removeChannel(channel);
     };
   }, [sessionId]);
 
